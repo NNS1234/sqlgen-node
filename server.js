@@ -1,12 +1,14 @@
-const PORT =8000
+const PORT = process.env.PORT ||8000
 const express = require('express')
-const env = require('dotenv').config()
+const dotenv = require("dotenv");
+dotenv.config();
 const cors = require('cors')
 const app=express()
 app.use(express.json())
 app.use(cors())
 
-const API_KEY = process.env.OPENAI_API_KEY
+const API_KEY = process.env.API_KEY;
+
 
 app.get('/',(req,res)=>{
     res.send('Hello World')
