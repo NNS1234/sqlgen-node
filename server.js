@@ -1,15 +1,16 @@
 //this is the server
-const PORT = process.env.PORT ||8000
+
 const express = require('express');
 const dotenv = require("dotenv");
 dotenv.config();
+const PORT = process.env.PORT ||8000
 const cors = require('cors')
 const app=express()
 app.use(express.json())
 app.use(cors())
 
 const API_KEY = process.env.API_KEY;
-console.log(process.env)
+
 app.get('/',(req,res)=>{
     res.send('Hello World')
 })
